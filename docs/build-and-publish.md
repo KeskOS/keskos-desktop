@@ -71,6 +71,14 @@ KESKOS_REPO_DIR=/some/path ./scripts/publish-all.sh
 
 The script copies `dist/*.pkg.tar.zst` into the target repo directory, runs `repo-add`, and refreshes `keskos.db` and `keskos.files` symlinks.
 
+Important:
+
+- Do not silently republish changed package contents under the same package filename.
+- If the package content changed after a package was already published, bump `pkgrel`, rebuild, and publish again.
+- The publish helper now refuses to replace an existing package archive with different contents unless you explicitly set `KESKOS_ALLOW_REPLACE_PUBLISHED_PKGS=1`.
+
+This prevents pacman cache checksum mismatches where users already have an older archive with the same version cached locally.
+
 ## Test A Local Repo In A VM
 
 1. Publish packages into a test directory.
@@ -84,4 +92,3 @@ The script copies `dist/*.pkg.tar.zst` into the target repo directory, runs `rep
 - Change `pkgver` only when the package version itself changes.
 - Bump `pkgrel` when package metadata or packaging changes but the upstream content version does not.
 - Keep package names stable.
-
