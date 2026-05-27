@@ -1,0 +1,18 @@
+pkgname=keskos-workspace-switcher
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="KeskOS custom Plasma workspace switcher widget"
+arch=(any)
+url="https://github.com/KeskOS/keskos-desktop"
+license=(GPL-3.0-or-later)
+optdepends=('keskos-tools: provides the keskos-workspace helper used when clicking workspace buttons')
+source=()
+sha256sums=()
+
+package() {
+  local srcroot="${startdir}/src"
+
+  install -d "${pkgdir}/usr/share/plasma/plasmoids" "${pkgdir}/usr/share/keskos/source/configs/plasmoids"
+  cp -a "${srcroot}/configs/plasmoids/com.keskos.workspaceswitcher" "${pkgdir}/usr/share/plasma/plasmoids/"
+  cp -a "${srcroot}/configs/plasmoids/com.keskos.workspaceswitcher" "${pkgdir}/usr/share/keskos/source/configs/plasmoids/"
+}

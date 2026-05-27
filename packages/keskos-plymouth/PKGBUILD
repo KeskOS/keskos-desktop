@@ -1,0 +1,22 @@
+pkgname=keskos-plymouth
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="KeskOS Plymouth boot splash assets and placeholder theme staging"
+arch=(any)
+url="https://github.com/KeskOS/keskos-desktop"
+license=(custom:KeskOS)
+optdepends=('plymouth: required to activate the staged Plymouth theme assets manually')
+source=()
+sha256sums=()
+
+package() {
+  local theme_dir="${pkgdir}/usr/share/plymouth/themes/kesk-os"
+  local srcroot="${startdir}/src"
+
+  install -d "${theme_dir}" "${pkgdir}/usr/share/doc/${pkgname}"
+  install -m 644 "${startdir}/README.md" "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+  install -m 644 "${startdir}/README.md" "${theme_dir}/README.md"
+  install -m 644 "${srcroot}/assets/kesk_os_logo-removebg.png" "${theme_dir}/logo.png"
+  install -m 644 "${srcroot}/assets/wallpaper-1920x1080.png" "${theme_dir}/background.png"
+  install -m 644 "${srcroot}/assets/spinner.png" "${theme_dir}/spinner.png"
+}

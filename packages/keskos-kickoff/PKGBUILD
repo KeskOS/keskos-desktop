@@ -1,0 +1,18 @@
+pkgname=keskos-kickoff
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="KeskOS customized KDE SimpleKickoff launcher"
+arch=(any)
+url="https://github.com/KeskOS/keskos-desktop"
+license=(GPL-2.0-or-later)
+optdepends=('keskos-branding: provides the branded launcher icon theme assets used by Kesk Kickoff')
+source=()
+sha256sums=()
+
+package() {
+  local srcroot="${startdir}/src"
+
+  install -d "${pkgdir}/usr/share/plasma/plasmoids" "${pkgdir}/usr/share/keskos/source/configs/plasmoids"
+  cp -a "${srcroot}/configs/plasmoids/org.kde.plasma.simplekickoff" "${pkgdir}/usr/share/plasma/plasmoids/"
+  cp -a "${srcroot}/configs/plasmoids/org.kde.plasma.simplekickoff" "${pkgdir}/usr/share/keskos/source/configs/plasmoids/"
+}

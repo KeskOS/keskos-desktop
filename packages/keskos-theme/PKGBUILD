@@ -1,0 +1,55 @@
+pkgname=keskos-theme
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="KeskOS desktop themes, color schemes, and default visual assets"
+arch=(any)
+url="https://github.com/KeskOS/keskos-desktop"
+license=(GPL-3.0-or-later)
+backup=(etc/xdg/autostart/dunst.desktop)
+source=()
+sha256sums=()
+
+package() {
+  local srcroot="${startdir}/src"
+
+  install -d "${pkgdir}/usr/share/keskos/source/configs"
+  cp -a "${srcroot}/configs/kde" "${pkgdir}/usr/share/keskos/source/configs/"
+  cp -a "${srcroot}/configs/konsole" "${pkgdir}/usr/share/keskos/source/configs/"
+  cp -a "${srcroot}/configs/Kvantum" "${pkgdir}/usr/share/keskos/source/configs/"
+  install -d "${pkgdir}/usr/share/keskos/source/configs/plasma"
+  cp -a "${srcroot}/configs/plasma/desktoptheme" "${pkgdir}/usr/share/keskos/source/configs/plasma/"
+  cp -a "${srcroot}/configs/look-and-feel" "${pkgdir}/usr/share/keskos/source/configs/"
+  cp -a "${srcroot}/configs/aurorae" "${pkgdir}/usr/share/keskos/source/configs/"
+  cp -a "${srcroot}/configs/kwin" "${pkgdir}/usr/share/keskos/source/configs/"
+  cp -a "${srcroot}/configs/dunst" "${pkgdir}/usr/share/keskos/source/configs/"
+  cp -a "${srcroot}/configs/fastfetch" "${pkgdir}/usr/share/keskos/source/configs/"
+
+  install -d "${pkgdir}/usr/share/keskos/defaults"
+  cp -a "${srcroot}/configs/dunst" "${pkgdir}/usr/share/keskos/defaults/"
+  cp -a "${srcroot}/configs/fastfetch" "${pkgdir}/usr/share/keskos/defaults/"
+  install -d "${pkgdir}/usr/share/keskos/defaults/xdg/Kvantum"
+  install -m 644 "${srcroot}/airootfs/etc/xdg/kdeglobals" "${pkgdir}/usr/share/keskos/defaults/xdg/kdeglobals"
+  install -m 644 "${srcroot}/airootfs/etc/xdg/kcminputrc" "${pkgdir}/usr/share/keskos/defaults/xdg/kcminputrc"
+  install -m 644 "${srcroot}/airootfs/etc/xdg/plasmarc" "${pkgdir}/usr/share/keskos/defaults/xdg/plasmarc"
+  install -m 644 "${srcroot}/airootfs/etc/xdg/kwinrc" "${pkgdir}/usr/share/keskos/defaults/xdg/kwinrc"
+  install -m 644 "${srcroot}/airootfs/etc/xdg/ksplashrc" "${pkgdir}/usr/share/keskos/defaults/xdg/ksplashrc"
+  install -m 644 "${srcroot}/airootfs/etc/xdg/Kvantum/kvantum.kvconfig" "${pkgdir}/usr/share/keskos/defaults/xdg/Kvantum/kvantum.kvconfig"
+
+  install -d "${pkgdir}/usr/share/color-schemes"
+  install -m 644 "${srcroot}/configs/kde/KeskOSDark.colors" "${pkgdir}/usr/share/color-schemes/KeskOSDark.colors"
+  install -m 644 "${srcroot}/configs/kde/keskos.colors" "${pkgdir}/usr/share/color-schemes/keskos.colors"
+
+  install -d "${pkgdir}/usr/share/konsole"
+  install -m 644 "${srcroot}/configs/konsole/KeskOS.profile" "${pkgdir}/usr/share/konsole/KeskOS.profile"
+  install -m 644 "${srcroot}/configs/konsole/KeskOS.colorscheme" "${pkgdir}/usr/share/konsole/KeskOS.colorscheme"
+
+  install -d "${pkgdir}/usr/share/Kvantum" "${pkgdir}/usr/share/plasma/desktoptheme" "${pkgdir}/usr/share/plasma/look-and-feel" "${pkgdir}/usr/share/aurorae/themes" "${pkgdir}/usr/share/kwin/decorations"
+  cp -a "${srcroot}/configs/Kvantum/KeskOS" "${pkgdir}/usr/share/Kvantum/"
+  cp -a "${srcroot}/configs/plasma/desktoptheme/keskos-shell" "${pkgdir}/usr/share/plasma/desktoptheme/"
+  cp -a "${srcroot}/configs/look-and-feel/com.keskos.desktop" "${pkgdir}/usr/share/plasma/look-and-feel/"
+  cp -a "${srcroot}/configs/aurorae/themes/KeskOS-SPLIT" "${pkgdir}/usr/share/aurorae/themes/"
+  cp -a "${srcroot}/configs/kwin/decorations/kwin4_decoration_qml_keskos_split" "${pkgdir}/usr/share/kwin/decorations/"
+
+  install -D -m 644 "${srcroot}/airootfs/etc/xdg/autostart/dunst.desktop" "${pkgdir}/etc/xdg/autostart/dunst.desktop"
+  install -D -m 644 "${srcroot}/airootfs/etc/skel/.config/dunst/dunstrc" "${pkgdir}/etc/skel/.config/dunst/dunstrc"
+}

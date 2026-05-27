@@ -1,0 +1,28 @@
+pkgname=keskos-branding
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="Shared KeskOS branding assets, icons, and wallpapers"
+arch=(any)
+url="https://github.com/KeskOS/keskos-desktop"
+license=(custom:KeskOS)
+source=()
+sha256sums=()
+
+package() {
+  local srcroot="${startdir}/src"
+
+  install -d "${pkgdir}/usr/share/keskos/assets" "${pkgdir}/usr/share/keskos/source/assets" "${pkgdir}/usr/share/keskos/panel-icons" "${pkgdir}/usr/share/icons/hicolor"
+  cp -a "${srcroot}/assets/." "${pkgdir}/usr/share/keskos/assets/"
+  cp -a "${srcroot}/assets/." "${pkgdir}/usr/share/keskos/source/assets/"
+  cp -a "${srcroot}/assets/panel-icons/." "${pkgdir}/usr/share/keskos/panel-icons/"
+  cp -a "${srcroot}/assets/icons/hicolor/." "${pkgdir}/usr/share/icons/hicolor/"
+
+  install -d "${pkgdir}/usr/share/backgrounds/keskos"
+  install -m 644 "${srcroot}/assets/wallpaper.jpg" "${pkgdir}/usr/share/backgrounds/keskos/wallpaper.jpg"
+  install -m 644 "${srcroot}/assets/wallpaper-1920x1080.png" "${pkgdir}/usr/share/backgrounds/keskos/wallpaper-1920x1080.png"
+  install -m 644 "${srcroot}/assets/wallpaper-2560x1440.png" "${pkgdir}/usr/share/backgrounds/keskos/wallpaper-2560x1440.png"
+  install -m 644 "${srcroot}/assets/wallpaper-4096x2160.png" "${pkgdir}/usr/share/backgrounds/keskos/wallpaper-4096x2160.png"
+
+  install -D -m 644 "${srcroot}/assets/kesk_os_logo-removebg.png" "${pkgdir}/usr/share/pixmaps/keskos-logo.png"
+  install -D -m 644 "${srcroot}/assets/kesk_os_logo_text.png" "${pkgdir}/usr/share/pixmaps/keskos-logo-text.png"
+}

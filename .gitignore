@@ -1,0 +1,7 @@
+dist/
+packages/*/pkg/
+packages/*/*.pkg.tar
+packages/*/*.pkg.tar.*
+packages/*/*.sig
+packages/*/*.log
+

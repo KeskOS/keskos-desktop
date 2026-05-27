@@ -1,0 +1,50 @@
+[global]
+    monitor = 0
+    follow = none
+    indicate_hidden = yes
+    shrink = no
+    separator_height = 1
+    padding = 12
+    horizontal_padding = 12
+    frame_width = 1
+    frame_color = "#ce6a35"
+    separator_color = "#ce6a35"
+    sort = yes
+    idle_threshold = 120
+    font = JetBrains Mono 10
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    word_wrap = yes
+    ellipsize = middle
+    stack_duplicates = yes
+    hide_duplicate_count = no
+    show_indicators = yes
+    icon_position = left
+    max_icon_size = 32
+    origin = top-right
+    offset = 12x42
+    width = 360
+    height = 120
+    transparency = 0
+    corner_radius = 0
+
+[urgency_low]
+    background = "#050505"
+    foreground = "#8f8a84"
+    frame_color = "#4c4845"
+    timeout = 4
+
+[urgency_normal]
+    background = "#050505"
+    foreground = "#b8afa6"
+    frame_color = "#ce6a35"
+    timeout = 6
+
+[urgency_critical]
+    background = "#120806"
+    foreground = "#ce6a35"
+    frame_color = "#ce6a35"
+    timeout = 0

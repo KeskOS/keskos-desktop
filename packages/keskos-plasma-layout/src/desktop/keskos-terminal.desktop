@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=KESKOS Terminal
+Comment=Open a terminal from KeskOS
+Exec=konsole --profile KeskOS
+Icon=/usr/share/keskos/panel-icons/terminal.svg
+Terminal=false
+StartupNotify=false
+Categories=System;Utility;
+X-KDE-Shortcuts=Meta+T,Meta+Return

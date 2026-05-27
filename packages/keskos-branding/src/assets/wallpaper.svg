@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4096" height="2160" viewBox="0 0 4096 2160">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="45%" stop-color="#080706"/>
+      <stop offset="100%" stop-color="#0b0a09"/>
+    </linearGradient>
+
+    <radialGradient id="vignette" cx="50%" cy="48%" r="78%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="68%" stop-color="#000000" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.48"/>
+    </radialGradient>
+
+    <pattern id="scanlines" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="2" fill="#0b0a09"/>
+      <rect y="2" width="6" height="1" fill="#14110f" fill-opacity="0.34"/>
+      <rect y="3" width="6" height="3" fill="#050505"/>
+    </pattern>
+
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="12" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0 0.08"/>
+        <feFuncG type="table" tableValues="0 0.07"/>
+        <feFuncB type="table" tableValues="0 0.06"/>
+        <feFuncA type="table" tableValues="0 0.18"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="smear" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="24"/>
+      <feDisplacementMap in="SourceGraphic" scale="26"/>
+    </filter>
+  </defs>
+
+  <rect width="4096" height="2160" fill="url(#bg)"/>
+  <rect width="4096" height="2160" fill="url(#scanlines)" opacity="0.36"/>
+  <rect width="4096" height="2160" filter="url(#grain)"/>
+  <rect width="4096" height="2160" fill="url(#vignette)"/>
+
+  <g opacity="0.18" filter="url(#smear)">
+    <rect x="0" y="220" width="4096" height="220" fill="#11100e"/>
+    <rect x="0" y="960" width="4096" height="170" fill="#0b0a09"/>
+    <rect x="0" y="1700" width="4096" height="250" fill="#11100e"/>
+  </g>
+
+  <g opacity="0.15">
+    <path d="M120 104h860" stroke="#ce6a35" stroke-width="1"/>
+    <path d="M3118 192h720" stroke="#ce6a35" stroke-width="1"/>
+    <path d="M204 2034h640" stroke="#ce6a35" stroke-width="1"/>
+    <path d="M3240 1988h520" stroke="#ce6a35" stroke-width="1"/>
+  </g>
+
+  <g opacity="0.22">
+    <circle cx="512" cy="280" r="2" fill="#ce6a35"/>
+    <circle cx="1320" cy="182" r="2" fill="#ce6a35"/>
+    <circle cx="2088" cy="246" r="2" fill="#ce6a35"/>
+    <circle cx="2840" cy="162" r="2" fill="#ce6a35"/>
+    <circle cx="3584" cy="230" r="2" fill="#ce6a35"/>
+    <circle cx="884" cy="1564" r="2" fill="#ce6a35"/>
+    <circle cx="1642" cy="1702" r="2" fill="#ce6a35"/>
+    <circle cx="2448" cy="1620" r="2" fill="#ce6a35"/>
+    <circle cx="3324" cy="1740" r="2" fill="#ce6a35"/>
+  </g>
+</svg>

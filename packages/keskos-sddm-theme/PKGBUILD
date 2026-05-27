@@ -1,0 +1,25 @@
+pkgname=keskos-sddm-theme
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="KeskOS SDDM login theme and packaged default SDDM snippets"
+arch=(any)
+url="https://github.com/KeskOS/keskos-desktop"
+license=(GPL-3.0-or-later)
+depends=(
+  sddm
+)
+source=()
+sha256sums=()
+
+package() {
+  local srcroot="${startdir}/src"
+
+  install -d "${pkgdir}/usr/share/sddm/themes" "${pkgdir}/usr/share/keskos/source/configs/sddm"
+  cp -a "${srcroot}/configs/sddm/keskos" "${pkgdir}/usr/share/sddm/themes/"
+  cp -a "${srcroot}/configs/sddm/keskos" "${pkgdir}/usr/share/keskos/source/configs/sddm/"
+
+  install -D -m 644 "${srcroot}/airootfs/etc/sddm.conf.d/keskos-theme.conf" "${pkgdir}/usr/share/keskos/defaults/sddm/keskos-theme.conf"
+  install -D -m 644 "${srcroot}/airootfs/etc/sddm.conf.d/keskos-live.conf" "${pkgdir}/usr/share/keskos/defaults/sddm/keskos-live.conf"
+  install -D -m 644 "${srcroot}/airootfs/etc/sddm.conf.d/keskos-theme.conf" "${pkgdir}/usr/share/keskos/source/airootfs/etc/sddm.conf.d/keskos-theme.conf"
+  install -D -m 644 "${srcroot}/airootfs/etc/sddm.conf.d/keskos-live.conf" "${pkgdir}/usr/share/keskos/source/airootfs/etc/sddm.conf.d/keskos-live.conf"
+}

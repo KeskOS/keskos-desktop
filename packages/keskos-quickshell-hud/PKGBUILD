@@ -1,0 +1,28 @@
+pkgname=keskos-quickshell-hud
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="KeskOS Quickshell HUD and top bar configuration"
+arch=(any)
+url="https://github.com/KeskOS/keskos-desktop"
+license=(GPL-3.0-or-later)
+depends=(
+  networkmanager
+  playerctl
+  quickshell
+)
+backup=(etc/xdg/autostart/keskos-quickshell.desktop)
+optdepends=('keskos-tools: provides the session-start, display-watch, and quickshell helper scripts used by the HUD')
+source=()
+sha256sums=()
+
+package() {
+  local srcroot="${startdir}/src"
+
+  install -d "${pkgdir}/usr/share/keskos" "${pkgdir}/usr/share/keskos/source/configs"
+  cp -a "${srcroot}/configs/quickshell" "${pkgdir}/usr/share/keskos/"
+  cp -a "${srcroot}/configs/quickshell" "${pkgdir}/usr/share/keskos/source/configs/"
+
+  install -D -m 644 "${srcroot}/airootfs/etc/xdg/autostart/keskos-quickshell.desktop" "${pkgdir}/etc/xdg/autostart/keskos-quickshell.desktop"
+  install -D -m 644 "${srcroot}/airootfs/etc/skel/.config/autostart/keskos-quickshell.desktop" "${pkgdir}/etc/skel/.config/autostart/keskos-quickshell.desktop"
+  install -D -m 644 "${srcroot}/airootfs/etc/skel/.config/autostart/keskos-display-watch.desktop" "${pkgdir}/etc/skel/.config/autostart/keskos-display-watch.desktop"
+}

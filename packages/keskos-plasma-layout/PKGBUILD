@@ -1,0 +1,27 @@
+pkgname=keskos-plasma-layout
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="KeskOS default Plasma panel layout, layout templates, and pinned app launchers"
+arch=(any)
+url="https://github.com/KeskOS/keskos-desktop"
+license=(GPL-3.0-or-later)
+optdepends=(
+  'keskos-kickoff: installs the branded launcher widget referenced by the default panel layout'
+  'keskos-tools: provides the layout reset and apply helpers used by KeskOS'
+  'keskos-workspace-switcher: installs the custom panel workspace switcher referenced by the default layout'
+)
+source=()
+sha256sums=()
+
+package() {
+  local srcroot="${startdir}/src"
+
+  install -D -m 644 "${srcroot}/configs/plasma/keskos-bottom-panel.js" "${pkgdir}/usr/share/keskos/plasma/keskos-bottom-panel.js"
+  install -D -m 644 "${srcroot}/configs/plasma/keskos-bottom-panel.js" "${pkgdir}/usr/share/keskos/source/configs/plasma/keskos-bottom-panel.js"
+  install -d "${pkgdir}/usr/share/plasma/layout-templates" "${pkgdir}/usr/share/keskos/source/configs/plasma"
+  cp -a "${srcroot}/configs/plasma/layout-templates/org.keskos.plasma.defaultPanel" "${pkgdir}/usr/share/plasma/layout-templates/"
+  cp -a "${srcroot}/configs/plasma/layout-templates" "${pkgdir}/usr/share/keskos/source/configs/plasma/"
+
+  install -D -m 644 "${srcroot}/desktop/keskos-files.desktop" "${pkgdir}/usr/share/applications/keskos-files.desktop"
+  install -D -m 644 "${srcroot}/desktop/keskos-terminal.desktop" "${pkgdir}/usr/share/applications/keskos-terminal.desktop"
+}
