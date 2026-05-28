@@ -1,6 +1,6 @@
 pkgname=keskos-sddm-theme
 pkgver=0.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="KeskOS SDDM login theme and packaged default SDDM snippets"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"

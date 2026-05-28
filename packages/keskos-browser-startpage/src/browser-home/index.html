@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <title>KESK NET ACCESS</title>
+  <title>KeskOS Net Access</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
   <section class="shell" aria-label="Kesk browser gateway">
     <header class="topbar">
-      <div>KESK::BROWSER_GATEWAY</div>
+        <div id="topbarBrand">KESK::BROWSER_GATEWAY</div>
       <div class="status">
         <span class="status-dot"></span>
         <span id="clock">SIGNAL READY</span>
@@ -21,9 +21,9 @@
 
     <main>
       <section class="hero">
-        <div class="kicker">LOCAL NODE // WEB INTERFACE</div>
-        <h1>KESK NET ACCESS</h1>
-        <p class="subtitle">
+        <div class="kicker" id="brandKicker">LOCAL NODE // WEB INTERFACE</div>
+        <h1 id="brandLine">KeskOS</h1>
+        <p class="subtitle" id="brandSubtitle">
           hardened browser gateway active. enter a <span>signal</span>, domain, or search query below.
         </p>
       </section>
@@ -93,7 +93,7 @@
 
         <div class="stat-card wide">
           <span class="stat-label">LOCAL NODE</span>
-          <strong id="localNode">KESK-OS</strong>
+          <strong id="localNode">KeskOS</strong>
           <span class="stat-sub" id="uptimeText">browser gateway initialized</span>
         </div>
       </section>
@@ -110,8 +110,8 @@
       </section>
 
       <footer class="footer">
-        <span>KESKOS LIVE SESSION</span>
-        <span>NODE: KESK-OS</span>
+        <span id="footerBrand">KeskOS</span>
+        <span id="footerNode">NODE: KESKOS</span>
         <span>STATUS: ONLINE</span>
       </footer>
     </main>

@@ -1,6 +1,6 @@
 pkgname=keskos-theme
 pkgver=0.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="KeskOS desktop themes, color schemes, and default visual assets"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"

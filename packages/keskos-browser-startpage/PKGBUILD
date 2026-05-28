@@ -1,11 +1,12 @@
 pkgname=keskos-browser-startpage
 pkgver=0.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="KeskOS browser start page and browser theming assets"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"
 license=(GPL-3.0-or-later)
 depends=(
+  keskos-release
   xdg-utils
 )
 source=()
@@ -18,6 +19,9 @@ package() {
   cp -a "${srcroot}/browser-home" "${pkgdir}/usr/share/keskos/startpage"
   cp -a "${srcroot}/browser-home" "${pkgdir}/usr/share/keskos/browser/startpage"
   cp -a "${srcroot}/browser-home" "${pkgdir}/usr/share/keskos/source/browser-home"
+  ln -sf /usr/lib/keskos/branding.json "${pkgdir}/usr/share/keskos/startpage/branding.json"
+  ln -sf /usr/lib/keskos/branding.json "${pkgdir}/usr/share/keskos/browser/startpage/branding.json"
+  ln -sf /usr/lib/keskos/branding.json "${pkgdir}/usr/share/keskos/source/browser-home/branding.json"
   cp -a "${srcroot}/airootfs/usr/share/keskos/browser-themes" "${pkgdir}/usr/share/keskos/"
   install -d "${pkgdir}/usr/share/keskos/first-run"
   cp -a "${srcroot}/airootfs/usr/share/keskos/first-run/browser-theme" "${pkgdir}/usr/share/keskos/first-run/"

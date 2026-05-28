@@ -1,8 +1,30 @@
 (function () {
+  const fallbackBranding = {
+    name: "KeskOS",
+    pretty_name: "KeskOS",
+    layer: "",
+    layer_name: "",
+    brand_line: "KeskOS",
+    channel: "stable",
+    build_id: "dev",
+    accent_color: "#ce6a35",
+    home_url: "https://keskos.org",
+    documentation_url: "https://docs.keskos.org",
+    download_url: "https://downloads.keskos.org",
+    support_url: "https://docs.keskos.org",
+    bug_report_url: "https://github.com/KeskOS"
+  };
+
   const form = document.getElementById("searchForm");
   const input = document.getElementById("searchInput");
   const hint = document.getElementById("hint");
   const clock = document.getElementById("clock");
+  const topbarBrand = document.getElementById("topbarBrand");
+  const brandKicker = document.getElementById("brandKicker");
+  const brandLine = document.getElementById("brandLine");
+  const brandSubtitle = document.getElementById("brandSubtitle");
+  const footerBrand = document.getElementById("footerBrand");
+  const footerNode = document.getElementById("footerNode");
 
   const adsBlocked = document.getElementById("adsBlocked");
   const trackersBlocked = document.getElementById("trackersBlocked");
@@ -19,6 +41,7 @@
     return;
   }
 
+  let activeBranding = fallbackBranding;
   const sessionStart = Date.now();
   const directSchemePattern = /^(https?:\/\/|file:\/\/|about:)/i;
   const localhostPattern = /^localhost(:\d+)?(\/.*)?$/i;
@@ -39,6 +62,54 @@
     "https://connect.facebook.net/en_US/fbevents.js",
     "https://bat.bing.com/bat.js"
   ];
+
+  async function loadBranding() {
+    try {
+      const response = await fetch("./branding.json", { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const payload = await response.json();
+      const branding = { ...fallbackBranding, ...payload };
+      if (!branding.layer_name && branding.layer) {
+        branding.layer_name = `Layer ${branding.layer}`;
+      }
+      if (!branding.brand_line) {
+        branding.brand_line = branding.pretty_name || branding.name || "KeskOS";
+      }
+      if (!branding.pretty_name) {
+        branding.pretty_name = branding.brand_line;
+      }
+      return branding;
+    } catch (_error) {
+      return fallbackBranding;
+    }
+  }
+
+  function applyBranding(branding) {
+    activeBranding = branding;
+    document.title = `${branding.brand_line} Net Access`;
+    if (topbarBrand) {
+      topbarBrand.textContent = `${branding.name.toUpperCase()}::BROWSER_GATEWAY`;
+    }
+    if (brandKicker) {
+      brandKicker.textContent = branding.layer_name
+        ? `${branding.layer_name.toUpperCase()} // WEB INTERFACE`
+        : "LOCAL NODE // WEB INTERFACE";
+    }
+    if (brandLine) {
+      brandLine.textContent = branding.brand_line;
+    }
+    if (brandSubtitle) {
+      brandSubtitle.innerHTML = `hardened browser gateway active for <span>${branding.brand_line}</span>. enter a signal, domain, or search query below.`;
+    }
+    if (footerBrand) {
+      footerBrand.textContent = branding.brand_line;
+    }
+    if (footerNode) {
+      footerNode.textContent = `NODE: ${branding.name.toUpperCase()}`;
+    }
+  }
 
   function updateClock() {
     const now = new Date();
@@ -108,11 +179,10 @@
     httpsMode.textContent = "PREFERRED";
     sessionTrace.textContent = "LIVE";
 
-    if (window.location.protocol === "file:") {
-      localNode.textContent = "KESK-OS // LOCAL";
-    } else {
-      localNode.textContent = "KESK-OS // REMOTE";
-    }
+    const nodeLabel = activeBranding.brand_line || activeBranding.name || "KeskOS";
+    localNode.textContent = window.location.protocol === "file:"
+      ? `${nodeLabel} // LOCAL`
+      : `${nodeLabel} // REMOTE`;
   }
 
   async function probeUrl(url) {
@@ -233,13 +303,18 @@
     }
   });
 
-  updateClock();
-  updateStaticSignals();
-  updateUptime();
-  updateHintForValue("");
-  updateProtectionStats();
+  async function initialize() {
+    applyBranding(await loadBranding());
+    updateClock();
+    updateStaticSignals();
+    updateUptime();
+    updateHintForValue("");
+    updateProtectionStats();
 
-  window.setInterval(updateClock, 15000);
-  window.setInterval(updateUptime, 1000);
-  window.setInterval(updateProtectionStats, 120000);
+    window.setInterval(updateClock, 15000);
+    window.setInterval(updateUptime, 1000);
+    window.setInterval(updateProtectionStats, 120000);
+  }
+
+  initialize();
 })();
