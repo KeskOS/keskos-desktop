@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>KeskOS icon task manager states</title>
+  <desc>Minimal orange task indicators for the KeskOS Plasma shell theme.</desc>
+  <rect id="hint-tile-center" x="0" y="0" width="5" height="5" fill="#ff6600"/>
+  <rect id="normal-hint-left-margin" x="2" y="16" width="1" height="8" fill="#800080"/>
+  <rect id="normal-hint-right-margin" x="29" y="16" width="1" height="8" fill="#800080"/>
+  <rect id="normal-hint-top-margin" x="12" y="2" width="8" height="1" fill="#800080"/>
+  <rect id="normal-hint-bottom-margin" x="12" y="29" width="8" height="3" fill="#800080"/>
+  <!-- bottom-normal -->
+  <rect id="normal-center" x="16" y="16" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="normal-top" x="16" y="8" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="normal-bottom">
+    <rect x="16" y="32" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="16" y="36" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="normal-left" x="8" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="normal-right" x="32" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="normal-topleft" x="8" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="normal-topright" x="32" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="normal-bottomleft">
+    <rect x="8" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="8" y="36" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="normal-bottomright">
+    <rect x="32" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="32" y="36" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- bottom-minimized -->
+  <rect id="minimized-center" x="56" y="16" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="minimized-top" x="56" y="8" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="minimized-bottom">
+    <rect x="56" y="32" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="56" y="36" width="16" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <rect id="minimized-left" x="48" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="minimized-right" x="72" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="minimized-topleft" x="48" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="minimized-topright" x="72" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="minimized-bottomleft">
+    <rect x="48" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="48" y="36" width="8" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <g id="minimized-bottomright">
+    <rect x="72" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="72" y="36" width="8" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <!-- bottom-hover -->
+  <rect id="hover-center" x="96" y="16" width="16" height="16" fill="#ce6a35" fill-opacity="0.08"/>
+  <rect id="hover-top" x="96" y="8" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="hover-bottom" x="96" y="32" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="hover-left" x="88" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="hover-right" x="112" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="hover-topleft" x="88" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="hover-topright" x="112" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="hover-bottomleft" x="88" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="hover-bottomright" x="112" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <!-- bottom-focus -->
+  <rect id="focus-center" x="136" y="16" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <g id="focus-top">
+    <rect x="136" y="8" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="136" y="8" width="16" height="1" fill="#ce6a35"/>
+  </g>
+  <g id="focus-bottom">
+    <rect x="136" y="32" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="136" y="39" width="16" height="1" fill="#ce6a35"/>
+  </g>
+  <g id="focus-left">
+    <rect x="128" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="16" width="1" height="16" fill="#ce6a35"/>
+  </g>
+  <g id="focus-right">
+    <rect x="152" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+    <rect x="159" y="16" width="1" height="16" fill="#ce6a35"/>
+  </g>
+  <g id="focus-topleft">
+    <rect x="128" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="8" width="8" height="1" fill="#ce6a35"/>
+    <rect x="128" y="8" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="focus-topright">
+    <rect x="152" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="152" y="8" width="8" height="1" fill="#ce6a35"/>
+    <rect x="159" y="8" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="focus-bottomleft">
+    <rect x="128" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="39" width="8" height="1" fill="#ce6a35"/>
+    <rect x="128" y="32" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="focus-bottomright">
+    <rect x="152" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="152" y="39" width="8" height="1" fill="#ce6a35"/>
+    <rect x="159" y="32" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <!-- bottom-attention -->
+  <rect id="attention-center" x="176" y="16" width="16" height="16" fill="#ce6a35" fill-opacity="0.12"/>
+  <rect id="attention-top" x="176" y="8" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="attention-bottom">
+    <rect x="176" y="32" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="176" y="36" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="attention-left" x="168" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="attention-right" x="192" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="attention-topleft" x="168" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="attention-topright" x="192" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="attention-bottomleft">
+    <rect x="168" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="168" y="36" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="attention-bottomright">
+    <rect x="192" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="192" y="36" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- bottom-progress -->
+  <rect id="progress-center" x="216" y="16" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="progress-top" x="216" y="8" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="progress-bottom">
+    <rect x="216" y="32" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="216" y="36" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="progress-left" x="208" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="progress-right" x="232" y="16" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="progress-topleft" x="208" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="progress-topright" x="232" y="8" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="progress-bottomleft">
+    <rect x="208" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="208" y="36" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="progress-bottomright">
+    <rect x="232" y="32" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="232" y="36" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- north-normal -->
+  <rect id="north-normal-center" x="16" y="70" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-normal-top" x="16" y="62" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="north-normal-bottom">
+    <rect x="16" y="86" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="16" y="90" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="north-normal-left" x="8" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-normal-right" x="32" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-normal-topleft" x="8" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-normal-topright" x="32" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="north-normal-bottomleft">
+    <rect x="8" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="8" y="90" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="north-normal-bottomright">
+    <rect x="32" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="32" y="90" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- north-minimized -->
+  <rect id="north-minimized-center" x="56" y="70" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-minimized-top" x="56" y="62" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="north-minimized-bottom">
+    <rect x="56" y="86" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="56" y="90" width="16" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <rect id="north-minimized-left" x="48" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-minimized-right" x="72" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-minimized-topleft" x="48" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-minimized-topright" x="72" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="north-minimized-bottomleft">
+    <rect x="48" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="48" y="90" width="8" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <g id="north-minimized-bottomright">
+    <rect x="72" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="72" y="90" width="8" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <!-- north-hover -->
+  <rect id="north-hover-center" x="96" y="70" width="16" height="16" fill="#ce6a35" fill-opacity="0.08"/>
+  <rect id="north-hover-top" x="96" y="62" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-hover-bottom" x="96" y="86" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-hover-left" x="88" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-hover-right" x="112" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-hover-topleft" x="88" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-hover-topright" x="112" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-hover-bottomleft" x="88" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-hover-bottomright" x="112" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <!-- north-focus -->
+  <rect id="north-focus-center" x="136" y="70" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <g id="north-focus-top">
+    <rect x="136" y="62" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="136" y="62" width="16" height="1" fill="#ce6a35"/>
+  </g>
+  <g id="north-focus-bottom">
+    <rect x="136" y="86" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="136" y="93" width="16" height="1" fill="#ce6a35"/>
+  </g>
+  <g id="north-focus-left">
+    <rect x="128" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="70" width="1" height="16" fill="#ce6a35"/>
+  </g>
+  <g id="north-focus-right">
+    <rect x="152" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+    <rect x="159" y="70" width="1" height="16" fill="#ce6a35"/>
+  </g>
+  <g id="north-focus-topleft">
+    <rect x="128" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="62" width="8" height="1" fill="#ce6a35"/>
+    <rect x="128" y="62" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="north-focus-topright">
+    <rect x="152" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="152" y="62" width="8" height="1" fill="#ce6a35"/>
+    <rect x="159" y="62" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="north-focus-bottomleft">
+    <rect x="128" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="93" width="8" height="1" fill="#ce6a35"/>
+    <rect x="128" y="86" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="north-focus-bottomright">
+    <rect x="152" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="152" y="93" width="8" height="1" fill="#ce6a35"/>
+    <rect x="159" y="86" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <!-- north-attention -->
+  <rect id="north-attention-center" x="176" y="70" width="16" height="16" fill="#ce6a35" fill-opacity="0.12"/>
+  <rect id="north-attention-top" x="176" y="62" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="north-attention-bottom">
+    <rect x="176" y="86" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="176" y="90" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="north-attention-left" x="168" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-attention-right" x="192" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-attention-topleft" x="168" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-attention-topright" x="192" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="north-attention-bottomleft">
+    <rect x="168" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="168" y="90" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="north-attention-bottomright">
+    <rect x="192" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="192" y="90" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- north-progress -->
+  <rect id="north-progress-center" x="216" y="70" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-progress-top" x="216" y="62" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="north-progress-bottom">
+    <rect x="216" y="86" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="216" y="90" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="north-progress-left" x="208" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-progress-right" x="232" y="70" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="north-progress-topleft" x="208" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="north-progress-topright" x="232" y="62" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="north-progress-bottomleft">
+    <rect x="208" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="208" y="90" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="north-progress-bottomright">
+    <rect x="232" y="86" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="232" y="90" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- west-normal -->
+  <rect id="west-normal-center" x="16" y="124" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-normal-top" x="16" y="116" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="west-normal-bottom">
+    <rect x="16" y="140" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="16" y="144" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="west-normal-left" x="8" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-normal-right" x="32" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-normal-topleft" x="8" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-normal-topright" x="32" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="west-normal-bottomleft">
+    <rect x="8" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="8" y="144" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="west-normal-bottomright">
+    <rect x="32" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="32" y="144" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- west-minimized -->
+  <rect id="west-minimized-center" x="56" y="124" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-minimized-top" x="56" y="116" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="west-minimized-bottom">
+    <rect x="56" y="140" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="56" y="144" width="16" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <rect id="west-minimized-left" x="48" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-minimized-right" x="72" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-minimized-topleft" x="48" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-minimized-topright" x="72" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="west-minimized-bottomleft">
+    <rect x="48" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="48" y="144" width="8" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <g id="west-minimized-bottomright">
+    <rect x="72" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="72" y="144" width="8" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <!-- west-hover -->
+  <rect id="west-hover-center" x="96" y="124" width="16" height="16" fill="#ce6a35" fill-opacity="0.08"/>
+  <rect id="west-hover-top" x="96" y="116" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-hover-bottom" x="96" y="140" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-hover-left" x="88" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-hover-right" x="112" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-hover-topleft" x="88" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-hover-topright" x="112" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-hover-bottomleft" x="88" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-hover-bottomright" x="112" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <!-- west-focus -->
+  <rect id="west-focus-center" x="136" y="124" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <g id="west-focus-top">
+    <rect x="136" y="116" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="136" y="116" width="16" height="1" fill="#ce6a35"/>
+  </g>
+  <g id="west-focus-bottom">
+    <rect x="136" y="140" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="136" y="147" width="16" height="1" fill="#ce6a35"/>
+  </g>
+  <g id="west-focus-left">
+    <rect x="128" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="124" width="1" height="16" fill="#ce6a35"/>
+  </g>
+  <g id="west-focus-right">
+    <rect x="152" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+    <rect x="159" y="124" width="1" height="16" fill="#ce6a35"/>
+  </g>
+  <g id="west-focus-topleft">
+    <rect x="128" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="116" width="8" height="1" fill="#ce6a35"/>
+    <rect x="128" y="116" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="west-focus-topright">
+    <rect x="152" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="152" y="116" width="8" height="1" fill="#ce6a35"/>
+    <rect x="159" y="116" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="west-focus-bottomleft">
+    <rect x="128" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="147" width="8" height="1" fill="#ce6a35"/>
+    <rect x="128" y="140" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="west-focus-bottomright">
+    <rect x="152" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="152" y="147" width="8" height="1" fill="#ce6a35"/>
+    <rect x="159" y="140" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <!-- west-attention -->
+  <rect id="west-attention-center" x="176" y="124" width="16" height="16" fill="#ce6a35" fill-opacity="0.12"/>
+  <rect id="west-attention-top" x="176" y="116" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="west-attention-bottom">
+    <rect x="176" y="140" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="176" y="144" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="west-attention-left" x="168" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-attention-right" x="192" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-attention-topleft" x="168" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-attention-topright" x="192" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="west-attention-bottomleft">
+    <rect x="168" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="168" y="144" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="west-attention-bottomright">
+    <rect x="192" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="192" y="144" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- west-progress -->
+  <rect id="west-progress-center" x="216" y="124" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-progress-top" x="216" y="116" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="west-progress-bottom">
+    <rect x="216" y="140" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="216" y="144" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="west-progress-left" x="208" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-progress-right" x="232" y="124" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="west-progress-topleft" x="208" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="west-progress-topright" x="232" y="116" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="west-progress-bottomleft">
+    <rect x="208" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="208" y="144" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="west-progress-bottomright">
+    <rect x="232" y="140" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="232" y="144" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- east-normal -->
+  <rect id="east-normal-center" x="16" y="178" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-normal-top" x="16" y="170" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="east-normal-bottom">
+    <rect x="16" y="194" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="16" y="198" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="east-normal-left" x="8" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-normal-right" x="32" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-normal-topleft" x="8" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-normal-topright" x="32" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="east-normal-bottomleft">
+    <rect x="8" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="8" y="198" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="east-normal-bottomright">
+    <rect x="32" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="32" y="198" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- east-minimized -->
+  <rect id="east-minimized-center" x="56" y="178" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-minimized-top" x="56" y="170" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="east-minimized-bottom">
+    <rect x="56" y="194" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="56" y="198" width="16" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <rect id="east-minimized-left" x="48" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-minimized-right" x="72" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-minimized-topleft" x="48" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-minimized-topright" x="72" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="east-minimized-bottomleft">
+    <rect x="48" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="48" y="198" width="8" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <g id="east-minimized-bottomright">
+    <rect x="72" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="72" y="198" width="8" height="3" fill="#ce6a35" fill-opacity="0.45"/>
+  </g>
+  <!-- east-hover -->
+  <rect id="east-hover-center" x="96" y="178" width="16" height="16" fill="#ce6a35" fill-opacity="0.08"/>
+  <rect id="east-hover-top" x="96" y="170" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-hover-bottom" x="96" y="194" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-hover-left" x="88" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-hover-right" x="112" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-hover-topleft" x="88" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-hover-topright" x="112" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-hover-bottomleft" x="88" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-hover-bottomright" x="112" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <!-- east-focus -->
+  <rect id="east-focus-center" x="136" y="178" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <g id="east-focus-top">
+    <rect x="136" y="170" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="136" y="170" width="16" height="1" fill="#ce6a35"/>
+  </g>
+  <g id="east-focus-bottom">
+    <rect x="136" y="194" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="136" y="201" width="16" height="1" fill="#ce6a35"/>
+  </g>
+  <g id="east-focus-left">
+    <rect x="128" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="178" width="1" height="16" fill="#ce6a35"/>
+  </g>
+  <g id="east-focus-right">
+    <rect x="152" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+    <rect x="159" y="178" width="1" height="16" fill="#ce6a35"/>
+  </g>
+  <g id="east-focus-topleft">
+    <rect x="128" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="170" width="8" height="1" fill="#ce6a35"/>
+    <rect x="128" y="170" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="east-focus-topright">
+    <rect x="152" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="152" y="170" width="8" height="1" fill="#ce6a35"/>
+    <rect x="159" y="170" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="east-focus-bottomleft">
+    <rect x="128" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="128" y="201" width="8" height="1" fill="#ce6a35"/>
+    <rect x="128" y="194" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <g id="east-focus-bottomright">
+    <rect x="152" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="152" y="201" width="8" height="1" fill="#ce6a35"/>
+    <rect x="159" y="194" width="1" height="8" fill="#ce6a35"/>
+  </g>
+  <!-- east-attention -->
+  <rect id="east-attention-center" x="176" y="178" width="16" height="16" fill="#ce6a35" fill-opacity="0.12"/>
+  <rect id="east-attention-top" x="176" y="170" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="east-attention-bottom">
+    <rect x="176" y="194" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="176" y="198" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="east-attention-left" x="168" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-attention-right" x="192" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-attention-topleft" x="168" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-attention-topright" x="192" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="east-attention-bottomleft">
+    <rect x="168" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="168" y="198" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="east-attention-bottomright">
+    <rect x="192" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="192" y="198" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <!-- east-progress -->
+  <rect id="east-progress-center" x="216" y="178" width="16" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-progress-top" x="216" y="170" width="16" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="east-progress-bottom">
+    <rect x="216" y="194" width="16" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="216" y="198" width="16" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <rect id="east-progress-left" x="208" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-progress-right" x="232" y="178" width="8" height="16" fill="#000000" fill-opacity="0"/>
+  <rect id="east-progress-topleft" x="208" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <rect id="east-progress-topright" x="232" y="170" width="8" height="8" fill="#000000" fill-opacity="0"/>
+  <g id="east-progress-bottomleft">
+    <rect x="208" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="208" y="198" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+  <g id="east-progress-bottomright">
+    <rect x="232" y="194" width="8" height="8" fill="#000000" fill-opacity="0"/>
+    <rect x="232" y="198" width="8" height="3" fill="#ce6a35" fill-opacity="1"/>
+  </g>
+</svg>

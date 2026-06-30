@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+conf="/etc/keskos/boot.conf"
+if [[ -r "$conf" ]]; then
+  # shellcheck disable=SC1090
+  . "$conf"
+fi
+
+min_seconds="${KESKOS_PLYMOUTH_MIN_SECONDS:-6}"
+if [[ ! "$min_seconds" =~ ^[0-9]+$ ]]; then
+  min_seconds=6
+fi
+
+/usr/bin/keskos-plymouth-message "[00:00:04.417] INIT    SESSION HANDOFF PENDING ..." || true
+
+if (( min_seconds > 0 )); then
+  sleep "$min_seconds"
+fi
+
+/usr/bin/keskos-plymouth-message "[00:00:06.000] INIT    HANDOFF COMPLETE" || true

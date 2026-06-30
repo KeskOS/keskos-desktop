@@ -6,23 +6,25 @@ DecorationButton {
 
     property color accentActive: "#ce6a35"
     property color accentInactive: "#845236"
-    property color fillIdle: "#0f0d0b"
+    property color fillIdle: "#0d0b09"
     property color fillHover: "#1a120d"
     property color fillPressed: "#24160f"
     property color textIdle: decoration.client.active ? accentActive : accentInactive
-
     readonly property bool isMinimize: button.buttonType === DecorationOptions.DecorationButtonMinimize
     readonly property bool isMaximizeRestore: button.buttonType === DecorationOptions.DecorationButtonMaximizeRestore
     readonly property bool isClose: button.buttonType === DecorationOptions.DecorationButtonClose
 
-    width: 32
-    height: 24
+    width: 26
+    height: 26
+    implicitWidth: width
+    implicitHeight: height
 
     Rectangle {
         anchors.fill: parent
         color: button.pressed ? button.fillPressed : (button.hovered ? button.fillHover : button.fillIdle)
         border.width: 1
         border.color: button.textIdle
+        antialiasing: false
     }
 
     Item {
@@ -77,6 +79,7 @@ DecorationButton {
                 border.color: button.textIdle
                 antialiasing: false
             }
+
         }
 
         Item {
@@ -104,6 +107,9 @@ DecorationButton {
                 transformOrigin: Item.Center
                 antialiasing: false
             }
+
         }
+
     }
+
 }

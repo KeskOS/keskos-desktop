@@ -1,0 +1,311 @@
+Window.SetBackgroundTopColor(0.0, 0.0, 0.0);
+Window.SetBackgroundBottomColor(0.0, 0.0, 0.0);
+
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+
+orange_r = 0.807;
+orange_g = 0.416;
+orange_b = 0.208;
+white_r = 0.80;
+white_g = 0.80;
+white_b = 0.76;
+dim_r = 0.48;
+dim_g = 0.46;
+dim_b = 0.42;
+black_r = 0.0;
+black_g = 0.0;
+black_b = 0.0;
+
+fun TextSprite(text, x, y, z, r, g, b) {
+  image = Image.Text(text, r, g, b);
+  sprite = Sprite();
+  sprite.SetImage(image);
+  sprite.SetX(x);
+  sprite.SetY(y);
+  sprite.SetZ(z);
+  return sprite;
+}
+
+fun SetText(sprite, text, r, g, b) {
+  sprite.SetImage(Image.Text(text, r, g, b));
+}
+
+margin = 24;
+if (screen_width < 1500) {
+  margin = 18;
+}
+
+post_x = margin + 4;
+post_y = 22;
+post_gap = 21;
+if (screen_height < 820) {
+  post_gap = 19;
+  post_y = 18;
+}
+
+TextSprite("KeskOS Firmware Interface v1.00", post_x, post_y, 10, white_r, white_g, white_b);
+TextSprite("Copyright (C) 2024-2026 Kesk Systems", post_x, post_y + post_gap, 10, white_r, white_g, white_b);
+TextSprite("All rights reserved.", post_x, post_y + post_gap * 2, 10, white_r, white_g, white_b);
+TextSprite("CPU  : KESKCORE P1x (200 MHz)", post_x, post_y + post_gap * 4, 10, white_r, white_g, white_b);
+TextSprite("MEM  : 262144K OK", post_x, post_y + post_gap * 5, 10, white_r, white_g, white_b);
+TextSprite("VID  : VGA Compatible", post_x, post_y + post_gap * 6, 10, white_r, white_g, white_b);
+TextSprite("BIO  : v1.00.12", post_x, post_y + post_gap * 7, 10, white_r, white_g, white_b);
+TextSprite("POST: Memory Test ............ OK", post_x, post_y + post_gap * 9, 10, white_r, white_g, white_b);
+TextSprite("POST: Video Init ............. OK", post_x, post_y + post_gap * 10, 10, white_r, white_g, white_b);
+TextSprite("POST: Keyboard ............... OK", post_x, post_y + post_gap * 11, 10, white_r, white_g, white_b);
+TextSprite("POST: Storage Detect ......... OK", post_x, post_y + post_gap * 12, 10, white_r, white_g, white_b);
+TextSprite("Firmware Hand-off Control: OK", post_x, post_y + post_gap * 14, 10, white_r, white_g, white_b);
+TextSprite("Boot Interface: KBI v2.1", post_x, post_y + post_gap * 15, 10, white_r, white_g, white_b);
+TextSprite("Handoff to KeskOS Bootloader...", post_x, post_y + post_gap * 16, 10, white_r, white_g, white_b);
+
+logo_image = Image("kesk_os_logo_text_large.png");
+logo_sprite = Sprite();
+logo_sprite.SetImage(logo_image);
+logo_x = screen_width - logo_image.GetWidth() - 34;
+if (logo_x < screen_width / 2) {
+  logo_x = screen_width - logo_image.GetWidth() - 24;
+}
+if (logo_x < 36) {
+  logo_x = 36;
+}
+logo_sprite.SetX(logo_x);
+logo_sprite.SetY(26);
+logo_sprite.SetZ(20);
+
+panel_x = margin;
+panel_y = screen_height * 43 / 100;
+panel_height = screen_height - panel_y - 88;
+if (panel_height < 300) {
+  panel_y = screen_height - 388;
+  panel_height = 318;
+}
+if (panel_y < 318) {
+  panel_y = 318;
+}
+panel_bottom = panel_y + panel_height;
+panel_right = screen_width - margin - 20;
+
+panel_rule = "+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+TextSprite(panel_rule, panel_x, panel_y, 15, orange_r, orange_g, orange_b);
+TextSprite(panel_rule, panel_x, panel_bottom, 15, orange_r, orange_g, orange_b);
+TextSprite("---- KESKOS BOOT SEQUENCE INITIATED ----", panel_x + 28, panel_y - 14, 16, orange_r, orange_g, orange_b);
+TextSprite("HANDOFF COMPLETE", screen_width - 245, panel_y - 14, 16, orange_r, orange_g, orange_b);
+
+side_gap = 24;
+side_y = panel_y + 22;
+TextSprite("|", panel_x, side_y, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 2, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 3, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 4, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 5, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 6, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 7, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 8, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 9, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 10, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 11, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 12, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 13, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 14, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 15, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 16, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 17, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 18, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_x, side_y + side_gap * 19, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 2, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 3, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 4, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 5, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 6, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 7, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 8, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 9, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 10, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 11, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 12, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 13, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 14, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 15, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 16, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 17, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 18, 16, orange_r, orange_g, orange_b);
+TextSprite("|", panel_right, side_y + side_gap * 19, 16, orange_r, orange_g, orange_b);
+
+scroll_x = panel_right - 10;
+scroll_top = panel_y + 36;
+scroll_bottom = panel_bottom - 42;
+TextSprite("^", scroll_x, scroll_top - 24, 18, orange_r, orange_g, orange_b);
+TextSprite("|", scroll_x + 2, scroll_top, 17, orange_r, orange_g, orange_b);
+TextSprite("|", scroll_x + 2, scroll_top + 42, 17, orange_r, orange_g, orange_b);
+TextSprite("|", scroll_x + 2, scroll_top + 84, 17, orange_r, orange_g, orange_b);
+TextSprite("|", scroll_x + 2, scroll_top + 126, 17, orange_r, orange_g, orange_b);
+TextSprite("|", scroll_x + 2, scroll_top + 168, 17, orange_r, orange_g, orange_b);
+TextSprite("|", scroll_x + 2, scroll_top + 210, 17, orange_r, orange_g, orange_b);
+TextSprite("|", scroll_x + 2, scroll_top + 252, 17, orange_r, orange_g, orange_b);
+TextSprite("|", scroll_x + 2, scroll_top + 294, 17, orange_r, orange_g, orange_b);
+TextSprite("v", scroll_x, scroll_bottom, 18, orange_r, orange_g, orange_b);
+scroll_thumb = TextSprite("###", scroll_x - 6, scroll_top + 42, 19, orange_r, orange_g, orange_b);
+
+log_x = panel_x + 26;
+tag_x = log_x + 170;
+msg_x = log_x + 260;
+log_y = panel_y + 30;
+line_gap = 23;
+if (screen_height < 820) {
+  line_gap = 21;
+}
+
+line01_ts = "[00:00:00.000]"; line01_tag = "KBI"; line01_msg = "Boot Interface v2.1 engaged"; line01_cursor = msg_x + 250;
+line02_ts = "[00:00:00.124]"; line02_tag = "BOOT"; line02_msg = "KeskOS Bootloader v0.9.4"; line02_cursor = msg_x + 235;
+line03_ts = "[00:00:00.251]"; line03_tag = "BOOT"; line03_msg = "Verifying system integrity .............. OK"; line03_cursor = msg_x + 425;
+line04_ts = "[00:00:00.387]"; line04_tag = "BOOT"; line04_msg = "Loading kernel image [keskos.core] ...... OK"; line04_cursor = msg_x + 435;
+line05_ts = "[00:00:00.621]"; line05_tag = "KERNEL"; line05_msg = "Decompressing kernel ................... OK"; line05_cursor = msg_x + 390;
+line06_ts = "[00:00:00.934]"; line06_tag = "KERNEL"; line06_msg = "Kernel relocated to 0xC0100000"; line06_cursor = msg_x + 300;
+line07_ts = "[00:00:01.096]"; line07_tag = "KERNEL"; line07_msg = "Initializing memory map ................. OK"; line07_cursor = msg_x + 430;
+line08_ts = "[00:00:01.280]"; line08_tag = "KERNEL"; line08_msg = "ACPI subsystem ........................ OK"; line08_cursor = msg_x + 395;
+line09_ts = "[00:00:01.287]"; line09_tag = "KERNEL"; line09_msg = "SMP Bring-up ........................... OK"; line09_cursor = msg_x + 380;
+line10_ts = "[00:00:01.713]"; line10_tag = "KERNEL"; line10_msg = "Scheduler initialized"; line10_cursor = msg_x + 210;
+line11_ts = "[00:00:02.341]"; line11_tag = "DRIVER"; line11_msg = "Storage controller [NVMe0] .............. OK"; line11_cursor = msg_x + 430;
+line12_ts = "[00:00:03.686]"; line12_tag = "INIT"; line12_msg = "DISPLAY STACK ONLINE"; line12_cursor = msg_x + 225;
+line13_ts = "[00:00:03.921]"; line13_tag = "INIT"; line13_msg = "SIGNAL LOCKED"; line13_cursor = msg_x + 155;
+line14_ts = "[00:00:04.417]"; line14_tag = "INIT"; line14_msg = "USER SESSION PENDING ..."; line14_cursor = msg_x + 255;
+
+s01_ts = TextSprite(line01_ts, log_x, log_y, 20, orange_r, orange_g, orange_b); s01_tag = TextSprite(line01_tag, tag_x, log_y, 20, orange_r, orange_g, orange_b); s01_msg = TextSprite(line01_msg, msg_x, log_y, 20, white_r, white_g, white_b);
+s02_ts = TextSprite(line02_ts, log_x, log_y + line_gap, 20, orange_r, orange_g, orange_b); s02_tag = TextSprite(line02_tag, tag_x, log_y + line_gap, 20, orange_r, orange_g, orange_b); s02_msg = TextSprite(line02_msg, msg_x, log_y + line_gap, 20, white_r, white_g, white_b);
+s03_ts = TextSprite(line03_ts, log_x, log_y + line_gap * 2, 20, orange_r, orange_g, orange_b); s03_tag = TextSprite(line03_tag, tag_x, log_y + line_gap * 2, 20, orange_r, orange_g, orange_b); s03_msg = TextSprite(line03_msg, msg_x, log_y + line_gap * 2, 20, white_r, white_g, white_b);
+s04_ts = TextSprite(line04_ts, log_x, log_y + line_gap * 3, 20, orange_r, orange_g, orange_b); s04_tag = TextSprite(line04_tag, tag_x, log_y + line_gap * 3, 20, orange_r, orange_g, orange_b); s04_msg = TextSprite(line04_msg, msg_x, log_y + line_gap * 3, 20, white_r, white_g, white_b);
+s05_ts = TextSprite(line05_ts, log_x, log_y + line_gap * 4, 20, orange_r, orange_g, orange_b); s05_tag = TextSprite(line05_tag, tag_x, log_y + line_gap * 4, 20, orange_r, orange_g, orange_b); s05_msg = TextSprite(line05_msg, msg_x, log_y + line_gap * 4, 20, white_r, white_g, white_b);
+s06_ts = TextSprite(line06_ts, log_x, log_y + line_gap * 5, 20, orange_r, orange_g, orange_b); s06_tag = TextSprite(line06_tag, tag_x, log_y + line_gap * 5, 20, orange_r, orange_g, orange_b); s06_msg = TextSprite(line06_msg, msg_x, log_y + line_gap * 5, 20, white_r, white_g, white_b);
+s07_ts = TextSprite(line07_ts, log_x, log_y + line_gap * 6, 20, orange_r, orange_g, orange_b); s07_tag = TextSprite(line07_tag, tag_x, log_y + line_gap * 6, 20, orange_r, orange_g, orange_b); s07_msg = TextSprite(line07_msg, msg_x, log_y + line_gap * 6, 20, white_r, white_g, white_b);
+s08_ts = TextSprite(line08_ts, log_x, log_y + line_gap * 7, 20, orange_r, orange_g, orange_b); s08_tag = TextSprite(line08_tag, tag_x, log_y + line_gap * 7, 20, orange_r, orange_g, orange_b); s08_msg = TextSprite(line08_msg, msg_x, log_y + line_gap * 7, 20, white_r, white_g, white_b);
+s09_ts = TextSprite(line09_ts, log_x, log_y + line_gap * 8, 20, orange_r, orange_g, orange_b); s09_tag = TextSprite(line09_tag, tag_x, log_y + line_gap * 8, 20, orange_r, orange_g, orange_b); s09_msg = TextSprite(line09_msg, msg_x, log_y + line_gap * 8, 20, white_r, white_g, white_b);
+s10_ts = TextSprite(line10_ts, log_x, log_y + line_gap * 9, 20, orange_r, orange_g, orange_b); s10_tag = TextSprite(line10_tag, tag_x, log_y + line_gap * 9, 20, orange_r, orange_g, orange_b); s10_msg = TextSprite(line10_msg, msg_x, log_y + line_gap * 9, 20, white_r, white_g, white_b);
+s11_ts = TextSprite(line11_ts, log_x, log_y + line_gap * 10, 20, orange_r, orange_g, orange_b); s11_tag = TextSprite(line11_tag, tag_x, log_y + line_gap * 10, 20, orange_r, orange_g, orange_b); s11_msg = TextSprite(line11_msg, msg_x, log_y + line_gap * 10, 20, white_r, white_g, white_b);
+s12_ts = TextSprite(line12_ts, log_x, log_y + line_gap * 11, 20, orange_r, orange_g, orange_b); s12_tag = TextSprite(line12_tag, tag_x, log_y + line_gap * 11, 20, orange_r, orange_g, orange_b); s12_msg = TextSprite(line12_msg, msg_x, log_y + line_gap * 11, 20, white_r, white_g, white_b);
+s13_ts = TextSprite(line13_ts, log_x, log_y + line_gap * 12, 20, orange_r, orange_g, orange_b); s13_tag = TextSprite(line13_tag, tag_x, log_y + line_gap * 12, 20, orange_r, orange_g, orange_b); s13_msg = TextSprite(line13_msg, msg_x, log_y + line_gap * 12, 20, white_r, white_g, white_b);
+s14_ts = TextSprite(line14_ts, log_x, log_y + line_gap * 13, 20, orange_r, orange_g, orange_b); s14_tag = TextSprite(line14_tag, tag_x, log_y + line_gap * 13, 20, orange_r, orange_g, orange_b); s14_msg = TextSprite(line14_msg, msg_x, log_y + line_gap * 13, 20, white_r, white_g, white_b);
+
+cursor_sprite = TextSprite("[]", line14_cursor, log_y + line_gap * 13, 22, orange_r, orange_g, orange_b);
+
+footer_y = screen_height - 52;
+TextSprite("MODE: SECURE", margin + 4, footer_y, 15, orange_r, orange_g, orange_b);
+TextSprite("KESKOS  |  STABLE CHANNEL", screen_width / 2 - 155, footer_y, 15, orange_r, orange_g, orange_b);
+uptime_sprite = TextSprite("UPTIME: 00:00:04", screen_width - 235, footer_y, 15, orange_r, orange_g, orange_b);
+
+fun RefreshLog() {
+  SetText(s01_ts, line01_ts, orange_r, orange_g, orange_b); SetText(s01_tag, line01_tag, orange_r, orange_g, orange_b); SetText(s01_msg, line01_msg, white_r, white_g, white_b);
+  SetText(s02_ts, line02_ts, orange_r, orange_g, orange_b); SetText(s02_tag, line02_tag, orange_r, orange_g, orange_b); SetText(s02_msg, line02_msg, white_r, white_g, white_b);
+  SetText(s03_ts, line03_ts, orange_r, orange_g, orange_b); SetText(s03_tag, line03_tag, orange_r, orange_g, orange_b); SetText(s03_msg, line03_msg, white_r, white_g, white_b);
+  SetText(s04_ts, line04_ts, orange_r, orange_g, orange_b); SetText(s04_tag, line04_tag, orange_r, orange_g, orange_b); SetText(s04_msg, line04_msg, white_r, white_g, white_b);
+  SetText(s05_ts, line05_ts, orange_r, orange_g, orange_b); SetText(s05_tag, line05_tag, orange_r, orange_g, orange_b); SetText(s05_msg, line05_msg, white_r, white_g, white_b);
+  SetText(s06_ts, line06_ts, orange_r, orange_g, orange_b); SetText(s06_tag, line06_tag, orange_r, orange_g, orange_b); SetText(s06_msg, line06_msg, white_r, white_g, white_b);
+  SetText(s07_ts, line07_ts, orange_r, orange_g, orange_b); SetText(s07_tag, line07_tag, orange_r, orange_g, orange_b); SetText(s07_msg, line07_msg, white_r, white_g, white_b);
+  SetText(s08_ts, line08_ts, orange_r, orange_g, orange_b); SetText(s08_tag, line08_tag, orange_r, orange_g, orange_b); SetText(s08_msg, line08_msg, white_r, white_g, white_b);
+  SetText(s09_ts, line09_ts, orange_r, orange_g, orange_b); SetText(s09_tag, line09_tag, orange_r, orange_g, orange_b); SetText(s09_msg, line09_msg, white_r, white_g, white_b);
+  SetText(s10_ts, line10_ts, orange_r, orange_g, orange_b); SetText(s10_tag, line10_tag, orange_r, orange_g, orange_b); SetText(s10_msg, line10_msg, white_r, white_g, white_b);
+  SetText(s11_ts, line11_ts, orange_r, orange_g, orange_b); SetText(s11_tag, line11_tag, orange_r, orange_g, orange_b); SetText(s11_msg, line11_msg, white_r, white_g, white_b);
+  SetText(s12_ts, line12_ts, orange_r, orange_g, orange_b); SetText(s12_tag, line12_tag, orange_r, orange_g, orange_b); SetText(s12_msg, line12_msg, white_r, white_g, white_b);
+  SetText(s13_ts, line13_ts, orange_r, orange_g, orange_b); SetText(s13_tag, line13_tag, orange_r, orange_g, orange_b); SetText(s13_msg, line13_msg, white_r, white_g, white_b);
+  SetText(s14_ts, line14_ts, orange_r, orange_g, orange_b); SetText(s14_tag, line14_tag, orange_r, orange_g, orange_b); SetText(s14_msg, line14_msg, white_r, white_g, white_b);
+  cursor_sprite.SetX(line14_cursor);
+  cursor_sprite.SetY(log_y + line_gap * 13);
+}
+
+fun PickIncoming(text) {
+  incoming_ts = "";
+  incoming_tag = "INIT";
+  incoming_msg = text;
+  incoming_cursor = msg_x + 480;
+
+  if (text == "[00:00:00.000] KBI     Boot Interface v2.1 engaged") { incoming_ts = "[00:00:00.000]"; incoming_tag = "KBI"; incoming_msg = "Boot Interface v2.1 engaged"; incoming_cursor = msg_x + 250; }
+  if (text == "[00:00:00.124] BOOT    KeskOS Bootloader v0.9.4") { incoming_ts = "[00:00:00.124]"; incoming_tag = "BOOT"; incoming_msg = "KeskOS Bootloader v0.9.4"; incoming_cursor = msg_x + 235; }
+  if (text == "[00:00:00.251] BOOT    Verifying system integrity .............. OK") { incoming_ts = "[00:00:00.251]"; incoming_tag = "BOOT"; incoming_msg = "Verifying system integrity .............. OK"; incoming_cursor = msg_x + 425; }
+  if (text == "[00:00:00.387] BOOT    Loading kernel image [keskos.core] ...... OK") { incoming_ts = "[00:00:00.387]"; incoming_tag = "BOOT"; incoming_msg = "Loading kernel image [keskos.core] ...... OK"; incoming_cursor = msg_x + 435; }
+  if (text == "[00:00:00.621] KERNEL  Decompressing kernel ................... OK") { incoming_ts = "[00:00:00.621]"; incoming_tag = "KERNEL"; incoming_msg = "Decompressing kernel ................... OK"; incoming_cursor = msg_x + 390; }
+  if (text == "[00:00:01.096] KERNEL  Initializing memory map ................. OK") { incoming_ts = "[00:00:01.096]"; incoming_tag = "KERNEL"; incoming_msg = "Initializing memory map ................. OK"; incoming_cursor = msg_x + 430; }
+  if (text == "[00:00:01.280] KERNEL  ACPI subsystem ........................ OK") { incoming_ts = "[00:00:01.280]"; incoming_tag = "KERNEL"; incoming_msg = "ACPI subsystem ........................ OK"; incoming_cursor = msg_x + 395; }
+  if (text == "[00:00:01.713] KERNEL  Scheduler initialized") { incoming_ts = "[00:00:01.713]"; incoming_tag = "KERNEL"; incoming_msg = "Scheduler initialized"; incoming_cursor = msg_x + 210; }
+  if (text == "[00:00:02.341] DRIVER  Storage controller [NVMe0] .............. OK") { incoming_ts = "[00:00:02.341]"; incoming_tag = "DRIVER"; incoming_msg = "Storage controller [NVMe0] .............. OK"; incoming_cursor = msg_x + 430; }
+  if (text == "[00:00:03.686] INIT    DISPLAY STACK ONLINE") { incoming_ts = "[00:00:03.686]"; incoming_tag = "INIT"; incoming_msg = "DISPLAY STACK ONLINE"; incoming_cursor = msg_x + 225; }
+  if (text == "[00:00:03.921] INIT    SIGNAL LOCKED") { incoming_ts = "[00:00:03.921]"; incoming_tag = "INIT"; incoming_msg = "SIGNAL LOCKED"; incoming_cursor = msg_x + 155; }
+  if (text == "[00:00:04.117] INIT    SPLIT INTERFACE ACTIVE") { incoming_ts = "[00:00:04.117]"; incoming_tag = "INIT"; incoming_msg = "SPLIT INTERFACE ACTIVE"; incoming_cursor = msg_x + 255; }
+  if (text == "[00:00:04.417] INIT    SESSION HANDOFF READY") { incoming_ts = "[00:00:04.417]"; incoming_tag = "INIT"; incoming_msg = "SESSION HANDOFF READY"; incoming_cursor = msg_x + 250; }
+  if (text == "[00:00:04.417] INIT    USER SESSION PENDING ...") { incoming_ts = "[00:00:04.417]"; incoming_tag = "INIT"; incoming_msg = "USER SESSION PENDING ..."; incoming_cursor = msg_x + 255; }
+  if (text == "[00:00:04.417] INIT    SESSION HANDOFF PENDING ...") { incoming_ts = "[00:00:04.417]"; incoming_tag = "INIT"; incoming_msg = "SESSION HANDOFF PENDING ..."; incoming_cursor = msg_x + 285; }
+  if (text == "[00:00:06.000] INIT    HANDOFF COMPLETE") { incoming_ts = "[00:00:06.000]"; incoming_tag = "INIT"; incoming_msg = "HANDOFF COMPLETE"; incoming_cursor = msg_x + 180; }
+}
+
+fun DisplayMessage(text) {
+  if (text != "") {
+    PickIncoming(text);
+    line01_ts = line02_ts; line01_tag = line02_tag; line01_msg = line02_msg; line01_cursor = line02_cursor;
+    line02_ts = line03_ts; line02_tag = line03_tag; line02_msg = line03_msg; line02_cursor = line03_cursor;
+    line03_ts = line04_ts; line03_tag = line04_tag; line03_msg = line04_msg; line03_cursor = line04_cursor;
+    line04_ts = line05_ts; line04_tag = line05_tag; line04_msg = line05_msg; line04_cursor = line05_cursor;
+    line05_ts = line06_ts; line05_tag = line06_tag; line05_msg = line06_msg; line05_cursor = line06_cursor;
+    line06_ts = line07_ts; line06_tag = line07_tag; line06_msg = line07_msg; line06_cursor = line07_cursor;
+    line07_ts = line08_ts; line07_tag = line08_tag; line07_msg = line08_msg; line07_cursor = line08_cursor;
+    line08_ts = line09_ts; line08_tag = line09_tag; line08_msg = line09_msg; line08_cursor = line09_cursor;
+    line09_ts = line10_ts; line09_tag = line10_tag; line09_msg = line10_msg; line09_cursor = line10_cursor;
+    line10_ts = line11_ts; line10_tag = line11_tag; line10_msg = line11_msg; line10_cursor = line11_cursor;
+    line11_ts = line12_ts; line11_tag = line12_tag; line11_msg = line12_msg; line11_cursor = line12_cursor;
+    line12_ts = line13_ts; line12_tag = line13_tag; line12_msg = line13_msg; line12_cursor = line13_cursor;
+    line13_ts = line14_ts; line13_tag = line14_tag; line13_msg = line14_msg; line13_cursor = line14_cursor;
+    line14_ts = incoming_ts; line14_tag = incoming_tag; line14_msg = incoming_msg; line14_cursor = incoming_cursor;
+    RefreshLog();
+  }
+}
+
+cursor_tick = 0;
+cursor_state = 1;
+scroll_tick = 0;
+scroll_offset = 0;
+uptime_tick = 0;
+uptime_phase = 4;
+
+fun RefreshCallback() {
+  cursor_tick = cursor_tick + 1;
+  scroll_tick = scroll_tick + 1;
+  uptime_tick = uptime_tick + 1;
+
+  if (cursor_tick > 16) {
+    cursor_tick = 0;
+    if (cursor_state == 1) {
+      cursor_state = 0;
+      cursor_sprite.SetImage(Image.Text("  ", orange_r, orange_g, orange_b));
+    } else {
+      cursor_state = 1;
+      cursor_sprite.SetImage(Image.Text("[]", orange_r, orange_g, orange_b));
+    }
+  }
+
+  if (scroll_tick > 10) {
+    scroll_tick = 0;
+    scroll_offset = scroll_offset + 10;
+    if (scroll_offset > 116) {
+      scroll_offset = 0;
+    }
+    scroll_thumb.SetY(scroll_top + 42 + scroll_offset);
+  }
+
+  if (uptime_tick > 24) {
+    uptime_tick = 0;
+    uptime_phase = uptime_phase + 1;
+    if (uptime_phase > 9) {
+      uptime_phase = 4;
+    }
+    if (uptime_phase == 4) { SetText(uptime_sprite, "UPTIME: 00:00:04", orange_r, orange_g, orange_b); }
+    if (uptime_phase == 5) { SetText(uptime_sprite, "UPTIME: 00:00:05", orange_r, orange_g, orange_b); }
+    if (uptime_phase == 6) { SetText(uptime_sprite, "UPTIME: 00:00:06", orange_r, orange_g, orange_b); }
+    if (uptime_phase == 7) { SetText(uptime_sprite, "UPTIME: 00:00:07", orange_r, orange_g, orange_b); }
+    if (uptime_phase == 8) { SetText(uptime_sprite, "UPTIME: 00:00:08", orange_r, orange_g, orange_b); }
+    if (uptime_phase == 9) { SetText(uptime_sprite, "UPTIME: 00:00:09", orange_r, orange_g, orange_b); }
+  }
+}
+
+Plymouth.SetDisplayMessageFunction(DisplayMessage);
+Plymouth.SetRefreshFunction(RefreshCallback);

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <title>KeskOS panel background</title>
+  <desc>Near-black Plasma panel frame with a one-pixel orange top accent line.</desc>
+  <defs>
+    <style id="current-color-scheme" type="text/css"><![CDATA[
+      .ColorScheme-Background { color: #050505; }
+      .ColorScheme-Highlight { color: #ce6a35; }
+    ]]></style>
+  </defs>
+
+  <rect id="hint-tile-center" x="0" y="0" width="5" height="5" fill="#ff6600"/>
+  <rect id="hint-left-margin" x="1" y="28" width="2" height="8" fill="#800080"/>
+  <rect id="hint-right-margin" x="61" y="28" width="2" height="8" fill="#800080"/>
+  <rect id="hint-top-margin" x="28" y="1" width="8" height="2" fill="#800080"/>
+  <rect id="hint-bottom-margin" x="28" y="61" width="8" height="2" fill="#800080"/>
+
+  <rect id="center" class="ColorScheme-Background" x="24" y="24" width="16" height="16" fill="currentColor"/>
+  <g id="top">
+    <rect class="ColorScheme-Background" x="24" y="16" width="16" height="8" fill="currentColor"/>
+    <rect class="ColorScheme-Highlight" x="24" y="16" width="16" height="1" fill="currentColor"/>
+  </g>
+  <rect id="bottom" class="ColorScheme-Background" x="24" y="40" width="16" height="8" fill="currentColor"/>
+  <rect id="left" class="ColorScheme-Background" x="16" y="24" width="8" height="16" fill="currentColor"/>
+  <rect id="right" class="ColorScheme-Background" x="40" y="24" width="8" height="16" fill="currentColor"/>
+  <g id="topleft">
+    <rect class="ColorScheme-Background" x="16" y="16" width="8" height="8" fill="currentColor"/>
+    <rect class="ColorScheme-Highlight" x="16" y="16" width="8" height="1" fill="currentColor"/>
+  </g>
+  <g id="topright">
+    <rect class="ColorScheme-Background" x="40" y="16" width="8" height="8" fill="currentColor"/>
+    <rect class="ColorScheme-Highlight" x="40" y="16" width="8" height="1" fill="currentColor"/>
+  </g>
+  <rect id="bottomleft" class="ColorScheme-Background" x="16" y="40" width="8" height="8" fill="currentColor"/>
+  <rect id="bottomright" class="ColorScheme-Background" x="40" y="40" width="8" height="8" fill="currentColor"/>
+</svg>

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+text="${*:-}"
+[[ -n "$text" ]] || exit 0
+
+if command -v plymouth >/dev/null 2>&1 && [[ -e /run/plymouth/pid ]]; then
+  plymouth display-message --text="$text" >/dev/null 2>&1 || true
+else
+  printf '%s
+' "$text"
+fi

@@ -1,22 +1,41 @@
 pkgname=keskos-plymouth
 pkgver=0.1.0
-pkgrel=2
-pkgdesc="KeskOS Plymouth boot splash assets and placeholder theme staging"
+pkgrel=7
+pkgdesc="KeskOS BIOS-terminal Plymouth boot splash theme and boot milestone helpers"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"
-license=(custom:KeskOS)
-optdepends=('plymouth: required to activate the staged Plymouth theme assets manually')
+license=(GPL-3.0-or-later)
+depends=(
+  bash
+  plymouth
+  systemd
+)
+backup=(
+  etc/keskos/boot.conf
+)
+install=keskos-plymouth.install
 source=()
 sha256sums=()
 
 package() {
-  local theme_dir="${pkgdir}/usr/share/plymouth/themes/kesk-os"
   local srcroot="${startdir}/src"
+  local theme_dir="${pkgdir}/usr/share/plymouth/themes/keskos"
 
   install -d "${theme_dir}" "${pkgdir}/usr/share/doc/${pkgname}"
   install -m 644 "${startdir}/README.md" "${pkgdir}/usr/share/doc/${pkgname}/README.md"
-  install -m 644 "${startdir}/README.md" "${theme_dir}/README.md"
+  install -m 644 "${srcroot}/themes/keskos/README.md" "${theme_dir}/README.md"
+  install -m 644 "${srcroot}/themes/keskos/keskos.plymouth" "${theme_dir}/keskos.plymouth"
+  install -m 644 "${srcroot}/themes/keskos/keskos.script" "${theme_dir}/keskos.script"
+  install -m 644 "${srcroot}/assets/kesk_os_logo_text.png" "${theme_dir}/kesk_os_logo_text.png"
+  install -m 644 "${srcroot}/assets/kesk_os_logo_text_large.png" "${theme_dir}/kesk_os_logo_text_large.png"
   install -m 644 "${srcroot}/assets/kesk_os_logo-removebg.png" "${theme_dir}/logo.png"
-  install -m 644 "${srcroot}/assets/wallpaper-1920x1080.png" "${theme_dir}/background.png"
-  install -m 644 "${srcroot}/assets/spinner.png" "${theme_dir}/spinner.png"
+
+  install -D -m 755 "${srcroot}/bin/keskos-plymouth-message" "${pkgdir}/usr/bin/keskos-plymouth-message"
+  install -D -m 755 "${srcroot}/bin/keskos-plymouth-boot-status" "${pkgdir}/usr/bin/keskos-plymouth-boot-status"
+  install -D -m 755 "${srcroot}/bin/keskos-plymouth-wait" "${pkgdir}/usr/bin/keskos-plymouth-wait"
+
+  install -D -m 644 "${srcroot}/systemd/keskos-plymouth-boot-status.service" "${pkgdir}/usr/lib/systemd/system/keskos-plymouth-boot-status.service"
+  install -D -m 644 "${srcroot}/systemd/keskos-plymouth-min-duration.service" "${pkgdir}/usr/lib/systemd/system/keskos-plymouth-min-duration.service"
+  install -D -m 644 "${srcroot}/systemd/display-manager.service.d/keskos-plymouth.conf" "${pkgdir}/usr/lib/systemd/system/display-manager.service.d/keskos-plymouth.conf"
+  install -D -m 644 "${srcroot}/etc/keskos/boot.conf" "${pkgdir}/etc/keskos/boot.conf"
 }

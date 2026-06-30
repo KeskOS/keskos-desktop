@@ -1,6 +1,6 @@
 pkgname=keskos-kickoff
 pkgver=0.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="KeskOS customized KDE SimpleKickoff launcher"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"

@@ -1,0 +1,12 @@
+[Unit]
+Description=KeskOS Plymouth minimum boot splash duration
+DefaultDependencies=no
+After=plymouth-start.service keskos-plymouth-boot-status.service
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/keskos-plymouth-wait
+
+[Install]
+WantedBy=graphical.target

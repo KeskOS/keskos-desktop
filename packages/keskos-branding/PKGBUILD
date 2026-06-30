@@ -1,6 +1,6 @@
 pkgname=keskos-branding
 pkgver=0.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Shared KeskOS branding assets, icons, and wallpapers"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"

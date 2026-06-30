@@ -24,9 +24,9 @@ Each package in `keskos-desktop` keeps its own pacman identity and installs to t
 
 ### `keskos-plymouth`
 
-- Purpose: the current Plymouth boot splash asset staging package.
-- Installs into: `/usr/share/plymouth/themes/kesk-os`, `/usr/share/doc/keskos-plymouth`.
-- Dependency notes: visual-only right now; `plymouth` is kept as an `optdepends` because the package stages assets without forcing activation.
+- Purpose: the active KeskOS BIOS-terminal Plymouth boot splash and curated boot milestone helpers.
+- Installs into: `/usr/share/plymouth/themes/keskos`, `/usr/bin/keskos-plymouth-*`, `/usr/lib/systemd/system`, `/etc/keskos/boot.conf`, `/usr/share/doc/keskos-plymouth`.
+- Dependency notes: depends on `plymouth` and `systemd`; the installer sets the theme, adds silent boot parameters, and rebuilds initramfs when possible.
 
 ### `keskos-plasma-layout`
 

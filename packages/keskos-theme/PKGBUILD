@@ -1,11 +1,10 @@
 pkgname=keskos-theme
 pkgver=0.1.0
-pkgrel=3
+pkgrel=10
 pkgdesc="KeskOS desktop themes, color schemes, and default visual assets"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"
 license=(GPL-3.0-or-later)
-backup=(etc/xdg/autostart/dunst.desktop)
 source=()
 sha256sums=()
 
@@ -50,6 +49,9 @@ package() {
   cp -a "${srcroot}/configs/aurorae/themes/KeskOS-SPLIT" "${pkgdir}/usr/share/aurorae/themes/"
   cp -a "${srcroot}/configs/kwin/decorations/kwin4_decoration_qml_keskos_split" "${pkgdir}/usr/share/kwin/decorations/"
 
-  install -D -m 644 "${srcroot}/airootfs/etc/xdg/autostart/dunst.desktop" "${pkgdir}/etc/xdg/autostart/dunst.desktop"
+  install -d "${pkgdir}/usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/assets"
+  install -m 644 "${srcroot}/configs/look-and-feel/com.keskos.desktop/contents/lockscreen/assets/background.png" "${pkgdir}/usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/assets/background.png"
+  install -m 644 "${srcroot}/configs/look-and-feel/com.keskos.desktop/contents/lockscreen/assets/logo.png" "${pkgdir}/usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/assets/logo.png"
+
   install -D -m 644 "${srcroot}/airootfs/etc/skel/.config/dunst/dunstrc" "${pkgdir}/etc/skel/.config/dunst/dunstrc"
 }

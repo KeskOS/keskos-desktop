@@ -292,6 +292,8 @@ frame.right=3
 inherits=PanelButtonCommand
 frame.element=menu
 interior.element=menu
+text.normal.color=#CE6A35
+text.focus.color=#CE6A35
 text.press.color=#050505
 text.toggle.color=#050505
 text.bold=false
@@ -308,8 +310,10 @@ frame=true
 frame.element=menuitem
 frame.right=10
 frame.left=10
-text.focus.color=#B8AFA6
-text.press.color=#B8AFA6
+text.normal.color=#CE6A35
+text.focus.color=#CE6A35
+text.press.color=#050505
+text.toggle.color=#050505
 
 [ComboBox]
 inherits=PanelButtonCommand

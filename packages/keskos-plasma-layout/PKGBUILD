@@ -1,6 +1,6 @@
 pkgname=keskos-plasma-layout
 pkgver=0.1.0
-pkgrel=2
+pkgrel=4
 pkgdesc="KeskOS default Plasma panel layout, layout templates, and pinned app launchers"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"

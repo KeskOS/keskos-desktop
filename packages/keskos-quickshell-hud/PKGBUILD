@@ -1,6 +1,6 @@
 pkgname=keskos-quickshell-hud
 pkgver=0.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="KeskOS Quickshell HUD and top bar configuration"
 arch=(any)
 url="https://github.com/KeskOS/keskos-desktop"

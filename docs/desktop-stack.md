@@ -12,7 +12,7 @@ KeskOS keeps the desktop stack modular even though the source now lives in one r
 - `keskos-branding` provides logos, wallpapers, icons, and branded asset files.
 - `keskos-theme` provides the Plasma, Kvantum, Konsole, Aurorae, and general visual theme layer.
 - `keskos-sddm-theme` provides the branded login screen.
-- `keskos-plymouth` provides the boot splash asset staging package.
+- `keskos-plymouth` provides the active BIOS-terminal Plymouth boot splash, boot milestone helpers, and minimum splash handoff services.
 
 ## Shell And Layout Layer
 

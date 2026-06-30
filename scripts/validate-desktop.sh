@@ -33,7 +33,7 @@ main() {
     [keskos-branding]="src/assets/wallpaper.jpg"
     [keskos-theme]="src/configs/kde/KeskOSDark.colors"
     [keskos-sddm-theme]="src/configs/sddm/keskos/Main.qml"
-    [keskos-plymouth]="src/assets/spinner.png"
+    [keskos-plymouth]="src/themes/keskos/keskos.script"
     [keskos-plasma-layout]="src/configs/plasma/keskos-bottom-panel.js"
     [keskos-quickshell-hud]="src/configs/quickshell/main.qml"
     [keskos-kickoff]="src/configs/plasmoids/org.kde.plasma.simplekickoff/metadata.json"

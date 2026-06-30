@@ -1,0 +1,13 @@
+[Unit]
+Description=KeskOS Plymouth boot status sequence
+DefaultDependencies=no
+After=plymouth-start.service systemd-udev-trigger.service systemd-modules-load.service
+Before=display-manager.service
+ConditionPathExists=/run/plymouth/pid
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/keskos-plymouth-boot-status
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ ! -e /run/plymouth/pid ]]; then
+  exit 0
+fi
+
+messages=(
+  "[00:00:00.000] KBI     Boot Interface v2.1 engaged"
+  "[00:00:00.124] BOOT    KeskOS Bootloader v0.9.4"
+  "[00:00:00.251] BOOT    Verifying system integrity .............. OK"
+  "[00:00:00.387] BOOT    Loading kernel image [keskos.core] ...... OK"
+  "[00:00:00.621] KERNEL  Decompressing kernel ................... OK"
+  "[00:00:01.096] KERNEL  Initializing memory map ................. OK"
+  "[00:00:01.280] KERNEL  ACPI subsystem ........................ OK"
+  "[00:00:01.713] KERNEL  Scheduler initialized"
+  "[00:00:02.341] DRIVER  Storage controller [NVMe0] .............. OK"
+  "[00:00:03.686] INIT    DISPLAY STACK ONLINE"
+  "[00:00:03.921] INIT    SIGNAL LOCKED"
+  "[00:00:04.117] INIT    SPLIT INTERFACE ACTIVE"
+  "[00:00:04.417] INIT    SESSION HANDOFF READY"
+  "[00:00:04.417] INIT    USER SESSION PENDING ..."
+)
+
+for message in "${messages[@]}"; do
+  /usr/bin/keskos-plymouth-message "$message"
+  sleep 0.16
+done
